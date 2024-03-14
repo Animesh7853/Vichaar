@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Homepage</title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+        <%= JSON.stringify(user) %>
+
+            <div class="container mt-3">
+                <form action="/blog" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="title">Title</label>
+                        <input type="text" class="title" id="title" name="title" aria-describedby="title">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="coverImage" class="coverImage">Cover Image</label>
+                        <input type="file"
+                        class="form-control"
+                        id="coverImage" 
+                        name="coverImage"
+                        aria-describedby="coverImage">
+                    </div>
+                    
+                    <div clas="mb-3">
+                        <label for="floatingTextarea">Body</label>
+                        <textarea  name="body" class="form-control mt-3" placeholder="Write  here" id="floatingTextarea"></textarea>
+  
+                    </div>
+                    <br>
+                    <div clas="mt-">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+  
+                    </div>
+                    
+                </form>
+            </div>
+            <%- include('./partials/scripts') %>
+</body>
+
+</html>
