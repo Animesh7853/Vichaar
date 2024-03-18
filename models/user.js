@@ -66,7 +66,19 @@ userSchema.statics.matchPasswordAndGenerateToken = async function(email, passwor
 };
 
 
+// userSchema.static('matchPassword',async function(email,password){
+//     const user = await this.findOne({email});
+//     if(!user) throw new Error('User Not Found');
 
+//     const salt = user.salt;
+//     const hashedPassword = user.password;
+
+//     const userProvidedHash =createHmac('sha256',salt).update(user.password).digest('hex');
+
+//     if(hashedPassword !== userProvidedHash) throw new Error('Incorrect Password');
+
+//     
+// });
 
 const User = model('user',userSchema);
 

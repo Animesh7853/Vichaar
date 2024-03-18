@@ -1,25 +1,33 @@
 <%- include('./partials/head') %>
-<title>Homepage</title>
-</head>
-<body>
+  <title>Homepage</title>
+  </head>
+
+  <body>
     <%- include('./partials/nav') %>
 
-    <!-- <%= JSON.stringify(user) %> -->
-    <!-- <%= JSON.stringify(allBlogs) %> Change allBlog to allBlogs -->
+      
 
-    <div class="container mt-3">
-        <%  allBlogs.forEach(blog => { %> <!-- Change allBlog to allBlogs -->
-            <div class="card mt-3" style="width: 18rem;">
-                <img src="<%= blog.coverImageURL %>" class="card-img-top" >
+      <div class="container mt-3 ">
+        <div class="row row-col-4">
+          <% allBlogs.forEach(blog=> { %> <!-- Change allBlog to allBlogs -->
+            <div class="col">
+              <div class="card mt-3" style="width: 18rem;">
+                <img src="<%= blog.coverImageURL %>" class="card-img-top">
                 <div class="card-body">
-                  <h5 class="card-title"><%= blog.title %></h5>
-                  
+                  <h5 class="card-title">
+                    <%= blog.title %>
+                  </h5>
+
                   <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read</a>
                 </div>
               </div>
-        <% }) %>
-    </div>
-    
-    <%- include('./partials/scripts') %>
-</body>
-</html>
+            </div>
+            <% }) %>
+        </div>
+
+      </div>
+
+      <%- include('./partials/scripts') %>
+  </body>
+
+  </html>
